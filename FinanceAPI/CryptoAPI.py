@@ -12,13 +12,17 @@ def get_crypto(symbol):
         request = requests.get(url)
         data = request.json()
 
+        if 'status' in data.keys():
+            print('Error')
+            exit()
+
         print(f"{data['symbol']} -> {data['rate']}")
 
     except requests.exceptions.RequestException as e:
         print('Error'), e
 
 
-pair = input()  # Enter a valid pair or else the program will crash
+pair = input()
 get_crypto(pair)
 
 """
