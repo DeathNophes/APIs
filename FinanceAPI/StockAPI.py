@@ -8,9 +8,14 @@ You need to create a registration at https://twelvedata.com/ to get a unique API
 
 def get_asset(symbol):
     url = f"https://api.twelvedata.com/time_series?symbol={symbol}&interval=1min&apikey={key}"
+    data = ''
     try:
         request = requests.get(url)
         data = request.json()
+
+        if data['status'] == 'error':
+            print('Error! Enter a valid stock!')
+            exit()
 
         print(f"Stock: {data['meta']['symbol']}\n"
               f"-Current price (USD): {data['values'][0]['close']}\n"
@@ -20,8 +25,7 @@ def get_asset(symbol):
         print('Error'), e
 
 
-stock_name = input()  # Enter valid symbols or else the program will crash
-
+stock_name = input()
 get_asset(stock_name)
 
 """
