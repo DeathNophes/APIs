@@ -12,13 +12,17 @@ def get_forex_pair(symbol):
         request = requests.get(url)
         data = request.json()
 
+        if 'status' in data.keys():
+            print('Error! This method works only with valid forex and cryptocurrency pairs!')
+            exit()
+
         print(f"{data['symbol']} -> {data['rate']}")
 
     except requests.exceptions.RequestException as e:
         print('Error'), e
 
 
-pair = input()  # # Enter a valid pair or else the program will crash
+pair = input()
 get_forex_pair(pair)
 
 """
