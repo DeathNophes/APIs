@@ -80,8 +80,7 @@ cryptocurrency.grid(row=0, column=6, columnspan=3, padx=50, pady=50)
 Here are the buttons
 """
 
-
-# For Forex
+# For Forex pairs
 eur_usd = Forex('EUR/USD')
 eur_usd_button = Button(main_window, text='EUR/USD', padx=5, pady=5, command=eur_usd.forex_pair)
 eur_usd_button.grid(row=1, column=1)
