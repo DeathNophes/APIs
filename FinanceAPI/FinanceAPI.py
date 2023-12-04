@@ -1,7 +1,7 @@
 import requests
 from tkinter import *
 
-key = '73a166e8ac064a3da602c22039ff28cd'
+key = ''
 
 """
 You need to create a registration at https://twelvedata.com/ to get a unique APIkey
