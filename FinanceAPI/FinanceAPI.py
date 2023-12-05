@@ -88,7 +88,7 @@ usd_rub_button = Button(main_window, text='USD/RUB', padx=5, pady=5, command=usd
 usd_rub_button.grid(row=4, column=1)
 
 
-# For Assets
+# For Stocks
 apple = Assets('AAPL')
 apple_button = Button(main_window, text='APPLE', padx=6, pady=5, command=apple.get_stock)
 apple_button.grid(row=1, column=4)
