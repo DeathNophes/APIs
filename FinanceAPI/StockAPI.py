@@ -6,7 +6,7 @@ You need to create a registration at https://twelvedata.com/ to get a unique API
 """
 
 
-def get_asset(symbol):
+def get_stock(symbol):
     url = f"https://api.twelvedata.com/time_series?symbol={symbol}&interval=1min&apikey={key}"
     data = ''
     try:
@@ -26,7 +26,7 @@ def get_asset(symbol):
 
 
 stock_name = input()
-get_asset(stock_name)
+get_stock(stock_name)
 
 """
 Example output:
