@@ -8,10 +8,11 @@ You need to create a registration at https://twelvedata.com/ to get a unique API
 """
 
 
-class Forex:
+class Assets:
     def __init__(self, symbol):
         self.symbol = symbol
 
+    # Forex pairs
     def forex_pair(self):
         url = f"https://api.twelvedata.com/exchange_rate?symbol={self.symbol}&apikey={key}"
         try:
@@ -23,11 +24,7 @@ class Forex:
         except requests.exceptions.RequestException as e:
             print('Error'), e
 
-
-class Assets:
-    def __init__(self, symbol):
-        self.symbol = symbol
-
+    # Assets
     def get_asset(self):
         url = f"https://api.twelvedata.com/time_series?symbol={self.symbol}&interval=1min&apikey={key}"
         try:
@@ -41,11 +38,7 @@ class Assets:
         except requests.exceptions.RequestException as e:
             print('Error'), e
 
-
-class Crypto:
-    def __init__(self, symbol):
-        self.symbol = symbol
-
+    # Cryptocurrencies
     def get_crypto(self):
         url = f"https://api.twelvedata.com/exchange_rate?symbol={self.symbol}&apikey={key}"
         try:
@@ -80,18 +73,17 @@ cryptocurrency.grid(row=0, column=6, columnspan=3, padx=50, pady=50)
 Here are the buttons
 """
 
-
 # For Forex
-eur_usd = Forex('EUR/USD')
+eur_usd = Assets('EUR/USD')
 eur_usd_button = Button(main_window, text='EUR/USD', padx=5, pady=5, command=eur_usd.forex_pair)
 eur_usd_button.grid(row=1, column=1)
-eur_bgn = Forex('EUR/BGN')
+eur_bgn = Assets('EUR/BGN')
 eur_bgn_button = Button(main_window, text='EUR/BGN', padx=4, pady=5, command=eur_bgn.forex_pair)
 eur_bgn_button.grid(row=2, column=1)
-usd_jpy = Forex('USD/JPY')
+usd_jpy = Assets('USD/JPY')
 usd_jpy_button = Button(main_window, text='USD/JPY', padx=6, pady=5, command=usd_jpy.forex_pair)
 usd_jpy_button.grid(row=3, column=1)
-usd_rub = Forex('USD/RUB')
+usd_rub = Assets('USD/RUB')
 usd_rub_button = Button(main_window, text='USD/RUB', padx=5, pady=5, command=usd_rub.forex_pair)
 usd_rub_button.grid(row=4, column=1)
 
@@ -112,10 +104,10 @@ meta_button.grid(row=4, column=4)
 
 
 # For Cryptocurrency
-bitcoin = Crypto('BTC/USD')
+bitcoin = Assets('BTC/USD')
 btc_button = Button(main_window, text='BTC/USD', padx=4, pady=5, command=bitcoin.get_crypto)
 btc_button.grid(row=1, column=7)
-ethereum = Crypto('ETH/USD')
+ethereum = Assets('ETH/USD')
 eth_button = Button(main_window, text='ETH/USD', padx=4, pady=5, command=ethereum.get_crypto)
 eth_button.grid(row=2, column=7)
 
