@@ -24,8 +24,8 @@ class Assets:
         except requests.exceptions.RequestException as e:
             print('Error'), e
 
-    # Assets
-    def get_asset(self):
+    # Stocks
+    def get_stock(self):
         url = f"https://api.twelvedata.com/time_series?symbol={self.symbol}&interval=1min&apikey={key}"
         try:
             request = requests.get(url)
@@ -90,16 +90,16 @@ usd_rub_button.grid(row=4, column=1)
 
 # For Assets
 apple = Assets('AAPL')
-apple_button = Button(main_window, text='APPLE', padx=6, pady=5, command=apple.get_asset)
+apple_button = Button(main_window, text='APPLE', padx=6, pady=5, command=apple.get_stock)
 apple_button.grid(row=1, column=4)
 google = Assets('GOOGL')
-google_button = Button(main_window, text='GOOGL', padx=3, pady=5, command=google.get_asset)
+google_button = Button(main_window, text='GOOGL', padx=3, pady=5, command=google.get_stock)
 google_button.grid(row=2, column=4)
 microsoft = Assets('MSFT')
-microsoft_button = Button(main_window, text='MSFT', padx=9, pady=5, command=microsoft.get_asset)
+microsoft_button = Button(main_window, text='MSFT', padx=9, pady=5, command=microsoft.get_stock)
 microsoft_button.grid(row=3, column=4)
 meta = Assets('META')
-meta_button = Button(main_window, text='META', padx=8, pady=5, command=meta.get_asset)
+meta_button = Button(main_window, text='META', padx=8, pady=5, command=meta.get_stock)
 meta_button.grid(row=4, column=4)
 
 
