@@ -1,5 +1,6 @@
 import datetime as dt
 import requests
+
 key = ''
 
 """
@@ -7,7 +8,7 @@ You need to create a registration at https://openweathermap.org/ to get a unique
 """
 
 
-def kelvin_to_celsius(kelvin):
+def kelvin_to_celsius_fahrenheit(kelvin):
     celsius = kelvin - 273.15
     fahrenheit = celsius * (9/5) + 32
     return celsius, fahrenheit
@@ -20,7 +21,7 @@ response = requests.get(url).json()
 
 country = response['sys']['country']
 temp_kelvin = response["main"]["temp"]
-temp_celsius, temp_fahrenheit = kelvin_to_celsius(temp_kelvin)
+temp_celsius, temp_fahrenheit = kelvin_to_celsius_fahrenheit(temp_kelvin)
 humidity = response['main']['humidity']
 description = response['weather'][0]['description']
 sunrise_time = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])

@@ -54,6 +54,7 @@ class Assets:
 """
 Our Window
 """
+
 main_window = Tk()
 main_window.title("Assets management")
 main_window.geometry("500x300")
