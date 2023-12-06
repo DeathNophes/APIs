@@ -4,5 +4,6 @@ Welcome to the APIs repository where you will find regularly updated existing pr
 FinanceAPI is written with tkinter GUI equipped with a few assets to choose from: 
 Forex :dollar:, Crypto :coin: and Stock :receipt:
 # WeatherAPI :cloud:
-WeatherAPI is written with tkinter GUI equiped with a few cities from Bulgaria and Europe to check the current weather, you can also check the weather in any city you like using the included python script!
+WeatherAPI is written with tkinter GUI equiped with a few cities from Bulgaria and Europe to check the current weather, 
+you can also check the weather in any city you like using the included python script!
 
