@@ -1,6 +1,6 @@
 import datetime as dt
 import requests
-from tkinter import *
+from tkinter import Tk, Label, Button
 
 key = ''
 
