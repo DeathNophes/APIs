@@ -8,7 +8,7 @@ You need to create a registration at https://twelvedata.com/ to get a unique API
 """
 
 
-def get_stock():
+def get_stock_price():
     stock_name = asset_entry.get()
     display.delete(0, 'end')
     url = f"https://api.twelvedata.com/time_series?symbol={stock_name}&interval=1min&apikey={key}"
@@ -42,7 +42,7 @@ Our Entries and Buttons
 """
 
 asset_entry = Entry(main_window, width=40)
-get_button = Button(main_window, text='Get', bg='yellow', width=20, command=get_stock)
+get_button = Button(main_window, text='Get', bg='yellow', width=20, command=get_stock_price)
 display = Entry(main_window, width=50)
 
 asset_entry.pack(pady=10)
