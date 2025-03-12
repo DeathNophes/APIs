@@ -90,6 +90,11 @@ function toggleSearchButtonState () {
     }
 }
 
+function showResultDiv () {
+    result.style.display = block
+}
+
+// Building the result
 function buildResult (closePrice, assetSymbol) {
     result.innerHTML = '';
 
@@ -117,6 +122,7 @@ inputField.addEventListener('input', toggleStartButtonState);
 startButton.addEventListener('click', checkApiKey);
 
 searchAssetButton.addEventListener('click', searchAsset);
+searchAssetButton.addEventListener('click', showResultDiv);
 searchAssetButton.addEventListener('click', brieflyDisableBtn)
 assetSearchField.addEventListener('input', toggleSearchButtonState)
 

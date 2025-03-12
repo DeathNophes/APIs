@@ -113,6 +113,7 @@ body {
 }
 
 .results-container div {
+    display: none;
     font-size: 24px;
     font-weight: bold;
     padding: 10px;
