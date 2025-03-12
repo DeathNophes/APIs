@@ -49,10 +49,10 @@ async function searchAsset () {
         const data = await response.json()
         const closePrice = data.values[0].close
         
-        buildResult(closePrice, symbol)
+        buildResultSuccess(closePrice, symbol)
     }
     catch {
-        console.log('Error')
+        buildResultFailure()
     }
 }
 
@@ -95,7 +95,7 @@ function showResultDiv () {
 }
 
 // Building the result
-function buildResult (closePrice, assetSymbol) {
+function buildResultSuccess (closePrice, assetSymbol) {
     result.innerHTML = '';
 
     const symbolP = document.createElement('p');
@@ -115,6 +115,14 @@ function buildResult (closePrice, assetSymbol) {
     priceP.appendChild(spanPrice)
 
     result.append(symbolP, priceP)
+}
+
+function buildResultFailure () {
+    result.innerHTML = ''
+
+    const symbolP = document.createElement('p')
+    symbolP.textContent = 'Error, check the validity of the symbol or wait a few seconds'
+    result.appendChild(symbolP)
 }
 
 startButton.addEventListener('click', brieflyDisableBtn);
