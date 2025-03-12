@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="finance-hub.css">
+    <title>Finance API</title>
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <div class="container">
+        <div class="api-field-container">
+            <input type="text" class="api-field" placeholder="Enter your API key">
+            <span id="inputSpan">*In order to get an API key you must make an account at www.twelvedata.com</span>
+            <div class="start-button-container">
+                <button class="start-button">Start</button>
+            </div>
+        </div>
+
+        <div class="post-start-container">
+            <div class="post-start-wrapper">
+                <div class="asset-search-field">
+                    <input type="text" id="asset-search-field" placeholder="Enter the asset's symbol">
+                    <div class="start-button-container">
+                        <button class="search-button">Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <div id="result"></div>
+            </div>            
+        </div>
+
+    </div>
+</body>
+<script src="finance-hub.js"></script>
+</html>
