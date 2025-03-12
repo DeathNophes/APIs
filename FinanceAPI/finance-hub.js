@@ -91,7 +91,7 @@ function toggleSearchButtonState () {
 }
 
 function showResultDiv () {
-    result.style.display = block
+    result.style.display = 'block'
 }
 
 // Building the result
