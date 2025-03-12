@@ -121,7 +121,7 @@ function buildResultFailure () {
     result.innerHTML = ''
 
     const symbolP = document.createElement('p')
-    symbolP.textContent = 'Error, check the validity of the symbol or wait a few seconds'
+    symbolP.textContent = 'Error, check the validity of the symbol or wait a few seconds before you try again'
     result.appendChild(symbolP)
 }
 
